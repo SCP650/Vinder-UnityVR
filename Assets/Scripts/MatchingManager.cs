@@ -9,19 +9,24 @@ public class MatchingManager : MonoBehaviour
     [SerializeField] Animator doorAnimator;
     [SerializeField] ParticleSystem congrats;
     [SerializeField] Transform player;
+    [SerializeField] AudioClip sad;
+    public AudioClip happy;
+    private AudioSource audio;
 
     private int index = -1;
     // Start is called before the first frame update
     void Start()
     {
         getNextUser();
+        audio = GetComponent<AudioSource>();
     }
 
     public void getNextUser()
     {
+        index += 1;
         if (index < potentialMatches.Length)
         {
-            index += 1;
+            
             StartCoroutine(transpaortUser(potentialMatches[index].transform));
             
         }
@@ -35,16 +40,20 @@ public class MatchingManager : MonoBehaviour
 
     IEnumerator checkIsMatch()
     {
-        yield return new WaitForSeconds(3);
-        if(Vector3.Distance(potentialMatches[index].transform.position, player.position) >= 0.5)
+        yield return new WaitForSeconds(2);
+        potentialMatches[index].SetActive(false);
+        if (Vector3.Distance(potentialMatches[index].transform.position, player.position) >= 1)
         {
+            audio.PlayOneShot(sad);
             Debug.Log("BAD MATCH");
         }
         else
         {
+            audio.PlayOneShot(happy);
             congrats.Play();
             yield return new WaitForSeconds(3);
             congrats.Stop();
+            congrats.Clear();
         }
         getNextUser();
     }

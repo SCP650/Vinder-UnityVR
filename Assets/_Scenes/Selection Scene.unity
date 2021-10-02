@@ -946,6 +946,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249918055}
   m_CullTransparentMesh: 0
+--- !u!198 &291365614 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 220061760595364267, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+    type: 3}
+  m_PrefabInstance: {fileID: 301284382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &301284382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1013,6 +1019,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MatchingRoomMap
       objectReference: {fileID: 0}
+    - target: {fileID: 220061760595364267, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 220061760595452273, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -1021,7 +1032,37 @@ PrefabInstance:
     - target: {fileID: 220061760609312941, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 220061760609519877, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.641
+      objectReference: {fileID: 0}
+    - target: {fileID: 220061760609521749, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 220061760609564973, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 220061760609564973, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 220061760609564973, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 220061760609564973, guid: c8f2d4b128d7c43479c1eb94c66d4fad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f2d4b128d7c43479c1eb94c66d4fad, type: 3}
@@ -4588,6 +4629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544597228}
   - component: {fileID: 1544597229}
+  - component: {fileID: 1544597230}
   m_Layer: 0
   m_Name: SelectionManager
   m_TagString: Untagged
@@ -4628,6 +4670,106 @@ MonoBehaviour:
   - {fileID: 3653637840615838036}
   target: {fileID: 603735221}
   doorAnimator: {fileID: 301284384}
+  congrats: {fileID: 291365614}
+  player: {fileID: 769404998}
+  sad: {fileID: 8300000, guid: 1306df7b893076545a5fb92f9835bce7, type: 3}
+  happy: {fileID: 8300000, guid: 46106490d5120d741bdc8d7202275435, type: 3}
+--- !u!82 &1544597230
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544597227}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1589098507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7329,7 +7471,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1544597229}
+        m_TargetAssemblyTypeName: MatchingManager, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -8962,6 +9116,7 @@ GameObject:
   - component: {fileID: 5383712444881544630}
   - component: {fileID: 7859944036223696651}
   - component: {fileID: 3323691380102184714}
+  - component: {fileID: 4636999382267172296}
   m_Layer: 8
   m_Name: Body5
   m_TagString: Untagged
@@ -8969,6 +9124,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4636999382267172296
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636999382267172295}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4141517, y: 0.65059394, z: 0.24518403}
+  m_Center: {x: 0, y: 0.3463098, z: -0.00000071525574}
 --- !u!33 &4699107203481867759
 MeshFilter:
   m_ObjectHideFlags: 0
