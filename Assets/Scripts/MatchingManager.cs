@@ -5,6 +5,7 @@ using UnityEngine;
 public class MatchingManager : MonoBehaviour
 {
     [SerializeField] GameObject[] potentialMatches;
+    [SerializeField] GameObject[] infoPanels;
     [SerializeField] Transform target;
     [SerializeField] Animator doorAnimator;
     [SerializeField] ParticleSystem congrats;
@@ -55,12 +56,13 @@ public class MatchingManager : MonoBehaviour
             congrats.Stop();
             congrats.Clear();
         }
+        yield return new WaitForSeconds(1);
         getNextUser();
     }
 
     IEnumerator transpaortUser(Transform user)
     {
-        float totalMovementTime = 3f; //the amount of time you want the movement to take
+        float totalMovementTime = 2f; //the amount of time you want the movement to take
         float currentMovementTime = 0f;//The amount of time that has passed
         Vector3 orgin = user.position;
         doorAnimator.SetBool("character_nearby", true);
@@ -72,5 +74,6 @@ public class MatchingManager : MonoBehaviour
         }
         Debug.Log("close doors!!");
         doorAnimator.SetBool("character_nearby", false);
+        infoPanels[index].SetActive(true);
     }
 }
