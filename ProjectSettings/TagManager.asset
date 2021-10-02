@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Bullet
+  - Don't Collide
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - LocalAvatarBody
   - LocalAvatarHead
   - InHand
-  - 
+  - don't collide
   - 
   - 
   - 
