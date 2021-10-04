@@ -1,2 +1,3 @@
-# Haunted-VRMultiplayer
+# Vinder
+
 A VR Multiplayer Prototype
